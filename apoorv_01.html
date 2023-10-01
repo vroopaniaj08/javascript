@@ -1,0 +1,26 @@
+<script>
+    var customer = [{
+        id: 34,
+        name: "apoorv",
+        mobile:9407232077
+    },
+    {
+        id: 3,
+        name: "dev",
+        mobile:9407574067
+    }];
+    document.write("<table width = '100%' border = '1'>");
+        document.write("<tr>");
+            document.write("<td>id</td>");
+            document.write("<td>Name</td>");
+            document.write("<td>mobile</td>");
+        document.write("</tr>");
+        for(var i of customer){
+        document.write("<tr>");
+            document.write(`<td>${i.id}</td>`);
+            document.write(`<td>${i.name}</td>`);
+            document.write(`<td>${i.mobile}</td>`);
+        document.write("</tr>");    
+        }
+    document.write("</table>");
+</script>
