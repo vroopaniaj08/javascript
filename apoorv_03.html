@@ -1,0 +1,21 @@
+<script>
+    var customer = {id: 34,name: "apoorv"};
+    var customerkicopy = customer;             // Both objects are referring to the same object -----------  1
+    document.write(customerkicopy.id + "  " + customerkicopy.name + "<br/>");
+    delete customer.name;
+    document.write(customerkicopy.id + "  " + customerkicopy.name + "<br/>");        // hence proved the statment 1
+    var cust = {id: 34,name: "apoorv"};
+    customerkicopy = {...cust,marks: 97.5};         // Cloning of the object in js
+    document.write(customerkicopy.id + "  " + customerkicopy.name + "<br/>");
+    delete customer.name;
+    document.write(customerkicopy.id + "  " + customerkicopy.name +"  "+ customerkicopy.marks +"<br/>");
+    
+
+    var arr = [12,23,34,45,56,67,78,89,90];
+    var arrkicopy = [...arr];                       // Clonig of the array in js
+    document.write("arr before shift function = " + arr + "<br/>");
+    document.write("arrkicopy before shift function = " + arrkicopy + "<br/>")
+    arr.shift();
+    document.write("arr after shift function = " + arr + "<br/>");
+    document.write("arrkicopy after shift function = " + arrkicopy + "<br/>")
+</script>
