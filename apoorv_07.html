@@ -1,0 +1,30 @@
+<script>
+    function f1(a,b,c){
+        document.writeln(a);
+        document.writeln(b);
+        document.write(c + "<br/>");
+    };
+    f1(45,2,34,5)          // output will be 45 2 34  (5 will be ignored)
+
+    function f2(a,b,...c){
+        document.writeln(a);
+        document.writeln(b);
+        document.write(c + "<br/>");
+    };
+    f2(45,2,34,5)           // output will be 45 2 34,5  (c will contains all the values after a and b)
+                            // here c(34,5) is a object (array)
+    var data = function (a,b){
+        var result = a+b;
+        return result;
+    }
+    var datafunction = data(2,3);           // Caller statment
+    document.write(datafunction + "<br/>");
+
+    function test (a,b,c){                  // function test is the higher order function
+        document.writeln(a);
+        document.writeln(b);
+        document.write(c);
+    };
+    test(23,34,function(){document.write("callback function")});            // c is a callback function
+    c();
+</script>
