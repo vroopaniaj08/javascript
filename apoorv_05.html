@@ -1,0 +1,28 @@
+<script>
+    var student = [
+        {
+            "id":4,
+            "name":"dev",
+            "mobile": 9898899989
+        },
+        {
+            "id":4,
+            "name":"dev",
+            "mobile": 9898899989
+        },
+        {
+            "id":4,
+            "name":"dev",
+            "mobile": 9898899989
+        },
+        {
+            "id":4,
+            "name":"dev",
+            "mobile": 9898899989
+        }
+    ];
+    var data = JSON.stringify(student);
+    var a = localStorage.setItem("hi",data);
+    var b = localStorage.getItem(a);
+    JSON.parse(b);
+</script>

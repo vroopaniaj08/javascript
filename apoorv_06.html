@@ -1,0 +1,28 @@
+<script>
+    var student = [
+        {
+            "id":4,
+            "name":"dev",
+            "mobile": 9898899989
+        },
+        {
+            "id":4,
+            "name":"dev",
+            "mobile": 9898899989
+        },
+        {
+            "id":4,
+            "name":"dev",
+            "mobile": 9898899989
+        },
+        {
+            "id":4,
+            "name":"dev",
+            "mobile": 9898899989
+        }
+    ];
+    var data = JSON.stringify(student);
+    var a = sessionStorage.setItem("hi",data);
+    var b = sessionStorage.getItem(a);
+    JSON.parse(b);
+</script>
