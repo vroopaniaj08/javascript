@@ -1,4 +1,5 @@
 <script>
+    // Cloning of object 
     var customer = {id: 34,name: "apoorv"};
     var customerkicopy = customer;             // Both objects are referring to the same object -----------  1
     document.write(customerkicopy.id + "  " + customerkicopy.name + "<br/>");
@@ -10,7 +11,7 @@
     delete customer.name;
     document.write(customerkicopy.id + "  " + customerkicopy.name +"  "+ customerkicopy.marks +"<br/>");
     
-
+    // Cloning of array
     var arr = [12,23,34,45,56,67,78,89,90];
     var arrkicopy = [...arr];                       // Clonig of the array in js (... is called spread operator)
     document.write("arr before shift function = " + arr + "<br/>");
