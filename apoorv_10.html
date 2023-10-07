@@ -1,0 +1,18 @@
+<script>
+    var a = 67;
+    var a = "aj";
+    // let a = 56;(error)
+    // let a = "aj";(error)
+    let b = 34;
+    // let b = 89;(error)       we cannot Declare b again using let
+    b=45;
+    /*
+    const c;                    'const' declarations must be initialized.
+    c = 34;
+    */
+   const c = 34;
+//    c =89;                    value stored in constant variable cannot update
+    console.log(a);             // output will be aj
+    console.log(b);             // output will be 34
+    console.log(c);             // output will be 34
+</script>
