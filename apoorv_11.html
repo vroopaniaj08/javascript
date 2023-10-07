@@ -1,0 +1,14 @@
+<script>
+    console.log(a);             //output will be undefined there is no error because of hoisting.
+    var a = 23;
+    /*
+        Hoisting
+        var a;
+        console.log(a);
+        a = 23; 
+    */
+    console.log(b);             //output will be error there is an error(Cannot access 'b' before initialization) because of no hoisting possible in the case of let.
+    let b = 34;                 
+    console.log(c);             //output will be error there is an error(Cannot access 'c' before initialization) because of no hoisting possible in the case of const. 
+    const c = 21;                 
+</script>
