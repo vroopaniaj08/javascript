@@ -1,0 +1,17 @@
+<script>
+    function message(){
+        this.product = function(){
+            console.log("hi");
+        };
+        this.sell = function(){
+            console.log("sellout...");
+        };
+        var cost = function (){             // Function is private 
+            console.log("cost...");
+        }
+    }
+    var obj = new message();
+    obj.product();
+    obj.sell();
+    obj.cost();                 //obj.cost is not a function
+</script>
