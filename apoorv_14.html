@@ -1,0 +1,19 @@
+<script>
+    f1();           // Hoisting is possible 
+
+    function f1(){
+        console.log("Execution complete......");
+    };
+
+    f2();           // Hoisting is not possible 
+
+    var f2  = function (){                  // ERROR(f2 is not a function) 
+        console.log("Execution complete......");
+    };
+
+    f3();           // Hoisting is not possible 
+
+    var f3  = ()=>{                         // ERROR(f3 is not a function) 
+        console.log("Execution complete......");
+    };
+</script>
