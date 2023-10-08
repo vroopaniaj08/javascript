@@ -1,0 +1,18 @@
+<script>
+    function f1(id,cname,age,mobile,bal){
+        this.id = id;
+        this.cname = cname;
+        this.age = age;
+        this.mobile = mobile;
+        this.bal = bal;
+        
+        this.balance = function(){
+            console.log("Balance :"+this.bal);
+        };
+    };
+    var obj = new f1(56,"apoorv",34,9407232077,65000);
+    obj.balance();                                          // Balance : 65000
+
+    var obj1 = new f1(5,"dev",34,9407232077,69000);
+    obj1.balance();                                         // Balance : 69000
+</script>
