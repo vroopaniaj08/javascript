@@ -1,0 +1,25 @@
+<script>
+    function f1(a,b,callback){
+        if (typeof (a) != "number" && typeof (b) != "number"){
+            callback(new Error("there is not number"));
+        }
+        else{
+            var result = a+b;
+            console.log("we solved the answer " + result);  // we solved the answer 33
+            callback(null,result); 
+        }
+    };
+    f1(10,23,function(err,result){      // odd
+        if(err){
+            document.write(err);
+        }
+        else {
+            if(result%2==0){
+                document.write("even");
+            }
+            else{
+                document.write("odd");
+            }
+        }
+    })
+</script>
