@@ -1,0 +1,14 @@
+<script>
+    const a = new Promise((resolve,reject)=>{
+        function f1 (){
+            console.log("hi");
+        };
+         reject();
+    });
+    a.then(()=>{
+        console.log("resolved");
+        f1();
+    }).catch(()=>{
+        console.log("rejected");
+    });
+</script>
