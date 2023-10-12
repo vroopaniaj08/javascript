@@ -46,4 +46,39 @@
         }
     }
     f();
+
+    const h = async function(){
+        try{
+            let result = await a(10);
+            console.log(result);
+
+            result = await b(result);
+            console.log(result);
+
+            result = await c(result);
+            console.log(result);
+        }
+        catch(err){
+            console.log(err);
+        }
+    }
+    h();
+
+    async function t(){
+        try{
+            let result = await a(10);
+            console.log(result);
+
+            result = await b(result);
+            console.log(result);
+
+            result = await c(result);
+            console.log(result);
+        }
+        catch(err){
+            console.log(err);
+        }
+    }
+
+    t();
 </script>
