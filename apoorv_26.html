@@ -1,0 +1,25 @@
+<html>
+    <head></head>
+    <body>
+        <center> 
+          <img id="main" src= "download.jpeg" width="100px" height="100px"/>
+          <br/><br/>
+          <button onclick="changeImageSize(1)">+</button>
+          <button onclick="changeImageSize(0)">-</button>
+        </center>
+        <script>
+           function changeImageSize(n){
+              var mainImage = document.getElementById("main");
+              if(n){
+                mainImage.width+=10;
+                mainImage.height+=10;
+              } 
+              else{
+                
+                mainImage.width-=10;
+                mainImage.height-=10;
+              }
+           }
+        </script>
+    </body>
+</html>
