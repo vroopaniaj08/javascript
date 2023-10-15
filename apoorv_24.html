@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>Apoorv jain</title>
+        <style>
+            #name{
+                width : 50%;
+                margin-left: 50px;
+                height: 40px;
+            }
+            #result{
+                margin-left: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <input type = "text" name = "Name" placeholder="Enter your name" id = "name" onkeyup="get_value()">         <!--onkeyup is a attribute used to run the function get_value with key press--> 
+        <div id = "result"></div>
+        <script>
+            function get_value(){
+                var name = document.querySelector("#name").value;
+                var result = document.querySelector("#result").innerHTML = name;
+            }
+        </script>
+    </body>
+</html>
