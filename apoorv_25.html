@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>Apoorv jain</title>
+        <style>
+            #name{
+                width : 50%;
+                margin-left: 50px;
+                height: 40px;
+            }
+            #result{
+                margin-top: 50px;
+                margin-left: 50px;
+            }
+            button{
+                height: 40px;
+                transition: all 4s linear ease-in;
+                background-color: green;
+                color: white;
+            }
+            button:hover{
+                width: 20%;
+            }
+        </style>
+    </head>
+    <body>
+        <input type = "text" name = "Name" placeholder="Enter your name" id = "name">         <!--onclick is a attribute used to run the function get_value when button is clicked--> 
+        <button onclick = "get_value()">click here</button>
+        <div id = "result"></div>
+        <script>
+            function get_value(){
+                var name = document.querySelector("#name").value;
+                var result = document.querySelector("#result").innerHTML = name;
+            }
+        </script>
+    </body>
+</html>
