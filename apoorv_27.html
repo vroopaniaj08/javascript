@@ -1,0 +1,28 @@
+<html>
+    <body>
+        <div>
+            <p>First paragraph</p>
+            <p>Second paragraph</p>
+            <p>Third paragrpah</p>
+        
+        </div>
+        <button onclick="f1()">First(Red)</button>
+        <button onclick="f2()">Second(Blue)</button>
+        <button onclick="f3()">Third(Green)</button>
+    
+        <script>
+            function f1(){
+                var firstPara = document.querySelector("div p:nth-child(1)");
+                firstPara.style.color='red';
+            }
+            function f2(){
+                var secondPara = document.querySelector("div p:nth-child(2)");
+                secondPara.style.color='blue';
+            }
+            function f3(){
+                var thirdPara = document.querySelector("div p:nth-child(3)");
+                thirdPara.style.color='green';
+            }
+        </script>
+    </body>
+</html>
