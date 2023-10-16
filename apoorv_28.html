@@ -20,8 +20,29 @@
         </div>
         <small id="passwordError" class="form-group mb-3"></small>
         <div class="form-group">
-            <input onkeyup = "validatenumber()" type="text" id="mobile" class="form-control" placeholder="Enter your mobile"/>
+            <input onkeyup="validateMobile()" type="text" id="mobile" class="form-control" placeholder="Enter your mobile"/>
             <small id="mobileError"></small>
+        </div>
+        <div class="form-group">
+          <label>Gender</label>
+          Male <input onchange="validateGender()" type="radio" id="male" name="gender"/>
+          Female <input onchange="validateGender()" type="radio" id="female"  name="gender"/>
+          <br><br>
+          <small id="genderError"></small>
+        </div>
+        <div class="form-group">
+          <select onchange="validateQualification()" class="form-control" id="qualification">
+            <option value="0">select qualification</option>
+            <option value="DR">Doctorate</option>
+            <option value="PG">Post graduate</option>
+            <option value="G">Graduate</option>
+            <option value="UG">Under graduate</option>
+          </select>  
+          <small id="qualificationError"></small>
+        </div>
+        <div class="form-group">
+          Select Your Pic : <input type="file" id="profilePic" onchange="validateProfilePic()"/>
+          <br><small id="profilePicError"></small>
         </div>
         <div class="form-group mt-5">
             <button onclick="return validateForm()" type="submit" class="btn btn-success">Sign up</button>
@@ -29,6 +50,85 @@
     </form>
    </div> 
    <script>
+    function validateProfilePic(){
+      var status = true;
+      var profile = document.querySelector("#profilePic");
+      var profilePicError = document.querySelector("#profilePicError");
+
+      if(profile.files[0]){
+        var fileName = profile.files[0].name;  // a.b.c.png
+        var lastIndexOfDotLetter = fileName.lastIndexOf(".");
+        var fileExtenstion = fileName.substring(lastIndexOfDotLetter);
+        if(fileExtenstion != '.png'){
+            status = false;
+            profilePicError.innerHTML = "Onlye png is allowed..";
+            profilePicError.style.color ="red";
+        }
+        else
+          profilePicError.innerHTML = "";
+      }
+      else
+      {
+        status = false;
+        profilePicError.innerHTML = "please upload profile pic";
+        profilePicError.style.color = "red";
+      }
+      return status;
+    }
+    function validateQualification(){
+      var status = true;
+      var qualification = document.querySelector("#qualification").value;
+      var qualificationError = document.querySelector("#qualificationError");
+      if(qualification == "0"){
+        qualificationError.innerHTML = "please select a qulification";
+        qualificationError.style.color = "red";
+        status = false;
+      }
+      else
+        qualificationError.innerHTML = "";
+      return status;
+    }
+      function validateGender(){
+        var status = true;
+        var male = document.querySelector("#male").checked;
+        var female = document.querySelector("#female").checked;
+
+        var genderError = document.querySelector("#genderError");
+
+        if(male==false && female == false){
+           status = false;
+           genderError.innerHTML = "please select gender";
+           genderError.style.color = "red";
+        }
+        else
+         genderError.innerHTML = "";
+        return status;
+      }
+      function validateMobile(){
+         var status = true;
+         var mobile = document.querySelector("#mobile").value;
+         var mobileError = document.querySelector("#mobileError");
+         
+         if(mobile.length == 0){
+           mobileError.innerHTML = "please enter mobile number";
+           mobileError.style.color = "red";
+           status = false;
+         }
+         else if(isNaN(mobile)){
+          mobileError.innerHTML = "only digits are allowed";
+          mobileError.style.color = "red";
+          status = false;
+        }
+         else if(mobile.length!=10){
+          mobileError.innerHTML = "Mobile number must have 10 digit";
+          mobileError.style.color = "red";
+          status = false;
+         }
+         
+         else
+           mobileError.innerHTML = "";
+         return status;
+      }
       function togglePassword(){
         var password = document.querySelector("#password");
         var passwordLabel = document.querySelector("#passwordLabel");
@@ -52,7 +152,6 @@
          console.log(result);
         */
          
-
          if(password.length == 0){
             status = false;
             passwordError.innerHTML = "please enter password";
@@ -66,33 +165,6 @@
          else
            passwordError.innerHTML = "";
          
-         return status;
-      }
-      function validatenumber(){
-         var status = true;
-         var number = document.querySelector("#mobile").value;
-         var mobileError = document.querySelector("#mobileError");
-         
-         if(number.length == 0){
-            status = false;
-            mobileError.innerHTML = "please enter mobile number";
-            mobileError.style.color= "red";
-         }
-         else if(number.length != 10){
-            status = false;
-            mobileError.innerHTML = "mobile number must be of 10 digits";
-            mobileError.style.color= "red";
-         }
-         else{
-            mobileError.innerHTML = "";
-         }
-         for (var i=0;i<number.length;i++){
-            if(number[i] != 0 && number[i] != 1 && number[i] != 2 && number[i] != 3 && number[i] != 4 && number[i] != 5 && number[i] != 6 && number[i] != 7 && number[i] != 8 && number[i] != 9){
-               status = false;
-               mobileError.innerHTML = "please enter number";
-               mobileError.style.color = 'red';
-            }
-         }
          return status;
       }
       function validateUsername(){
@@ -113,9 +185,11 @@
       function validateForm(){
          var usernameStatus = validateUsername();
          var passwordStatus = validatePassword();
-         var mobileStatus = validatenumber();
-
-         if(usernameStatus && passwordStatus && mobileStatus)
+         var mobileStatus = validateMobile();
+         var genderStatus = validateGender();
+         var profilePicStatus = validateProfilePic();
+         var qualificationStatus = validateQualification();
+         if(usernameStatus && passwordStatus && mobileStatus && genderStatus && qualificationStatus && profilePicStatus)
            return true;
          return false;  
       }
