@@ -86,6 +86,13 @@
          else{
             mobileError.innerHTML = "";
          }
+         for (var i=0;i<number.length;i++){
+            if(number[i] != 0 && number[i] != 1 && number[i] != 2 && number[i] != 3 && number[i] != 4 && number[i] != 5 && number[i] != 6 && number[i] != 7 && number[i] != 8 && number[i] != 9){
+               status = false;
+               mobileError.innerHTML = "please enter number";
+               mobileError.style.color = 'red';
+            }
+         }
          return status;
       }
       function validateUsername(){
