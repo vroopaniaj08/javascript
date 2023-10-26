@@ -1,0 +1,19 @@
+<script>
+    class parent{
+        hi(){
+            document.writeln("hi");
+        }
+        hello(){
+            document.writeln("hello");
+        }
+    }
+    class child extends parent{
+        bye(){
+            document.write("Bye");
+        }
+    }
+    let obj = new child();
+    obj.hello();
+    obj.hi();
+    obj.bye();
+</script>
