@@ -1,0 +1,38 @@
+<script>
+    /*
+        types of ways in which object is created 
+    */
+ // Creating js objects with object literal 
+ let a = {}; 
+
+ // object of simple function
+ function f1(id,name,age){
+    this.id = id;
+    this.name = name;
+    this.age = age;
+ }
+ let obj = new f1(34,"apoorv",20);
+ document.write(obj.age);
+ document.write("<br/>");
+ document.write(obj.name);
+ document.write("<br/>");
+ document.write(obj.id);
+
+ // class
+
+ class Customer{
+      constructor(id,cname,age){
+        this.id = id;
+        this.cname = cname;
+        this.age = age;
+        this.showDetails();
+      }
+
+      showDetails(){
+        document.write("<br/>"+this.id+"  "+this.cname+" "+this.age);
+      }
+      
+    }
+
+    let obj1 = new Customer(100,"ABC",25); // obj : id:100,cname:"ABC",age:25
+</script>
