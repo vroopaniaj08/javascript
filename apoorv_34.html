@@ -1,12 +1,19 @@
-<script>
-    var xhttp = new XMLHttpRequest();
-    var api = "https://jsonplaceholder.typicode.com/posts";
-    xhttp.open("POST",api,true);
-    xhttp.send("id=101");
-    
-    xhttp.onreadystatechange = function (){
-        if(xhttp.readyState == 4){
-            console.log(xhttp.responseText);
-        }
-    }
-</script>
+<html>
+    <head></head>
+    <body>
+        <button onclick = "f1()">click here</button>
+        <script>
+            function f1(){
+                var xhttp = new XMLHttpRequest();
+                var api = "https://jsonplaceholder.typicode.com/posts";
+                xhttp.open("POST",api,true);
+                xhttp.send("id=101");
+                xhttp.onreadystatechange = function (){
+                    if(xhttp.readyState == 4){
+                        console.log(xhttp.responseText);
+                    }
+                }
+            }
+        </script>
+</body>
+</html>
