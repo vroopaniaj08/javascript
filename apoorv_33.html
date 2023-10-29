@@ -1,0 +1,12 @@
+<script>
+    var xhttp = new XMLHttpRequest();
+    var api = "https://jsonplaceholder.typicode.com/posts";
+    xhttp.open("GET",api,true);
+    xhttp.send();
+    
+    xhttp.onreadystatechange = function (){
+        if(xhttp.readyState == 4){
+            console.log(xhttp.responseText);
+        }
+    }
+</script>  
