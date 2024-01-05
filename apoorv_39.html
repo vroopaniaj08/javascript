@@ -1,0 +1,25 @@
+<script>
+    
+    const obj = [
+        {
+            "name": "apoorvjain",
+            "age": 20,
+            "enrollment": "0827CS211034"
+        },
+        {
+            "name": "seemajain",
+            "age": 45,
+            "enrollment": "0827CS211030"
+        },
+        {
+            "name": "akshitjain",
+            "age": 16,
+            "enrollment": "0827CS211003"
+        }
+    ];
+    obj.filter(({age,enrollment})=>(age >= 18 && (enrollment == "0827CS211034" || enrollment == "0827CS211030"))).map((num)=>{
+        document.write(`my name is ${num.name}<br/>`);
+        document.write(`my enroll no is ${num.enrollment}<br/>`);
+        document.write(`my age is ${num.age}<br/><hr/>`);
+    })
+</script>
