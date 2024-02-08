@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let obj = {
+            name: "apoorv jain",
+            address: "saket nagar",
+            details: function (){
+                console.log(this.name + " "+ this.address);
+            }
+        }
+        let obj1 = {
+            name: "akshit jain",
+            address: "saket nagar"
+        }
+        obj.details.call(obj1);
+    </script>
+</body>
+</html>
