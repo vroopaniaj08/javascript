@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let obj = {
+            name: "apoorv jain",
+            address: "saket nagar",
+            details: function (contact,pincode){
+                console.log(this.name+ " " + this.address+ " " + contact+  " " + pincode)
+            }
+        }
+        let sobj = {
+            name: "parag jain",
+            address: "tilak nagar"
+        }
+        obj.details.apply(sobj,["940","123"]);
+    </script>
+</body>
+</html>
